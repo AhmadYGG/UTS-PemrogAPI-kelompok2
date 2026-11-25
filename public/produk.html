@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barang, TechnoParts</title>
+  <link rel="icon" href="logo.svg">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="produk.mjs"></script>
+</head>
+<body>
+  <a class="lompat" href="#isi">Lewati ke barang</a>
+
+  <header class="kepala">
+    <div class="wadah kepala-atas">
+      <a class="logo" href="/"><img src="logo.svg" alt="" width="44" height="32">TechnoParts</a>
+      <form class="cari" action="/" role="search">
+        <input type="search" name="cari" aria-label="Cari barang" placeholder="Cari nama atau kode barang">
+        <button>Cari</button>
+      </form>
+      <div class="akun" data-akun></div>
+    </div>
+    <nav aria-label="Kategori"><div class="wadah nav" data-kategori></div></nav>
+  </header>
+
+  <main class="wadah" id="isi">
+    <nav class="remah" id="remah" aria-label="Posisi halaman"><a href="/">Beranda</a></nav>
+    <article class="produk" id="produk"></article>
+    <section id="lainnya" hidden>
+      <h2 class="judul-daftar" id="judul-serupa"></h2>
+      <ul class="barang lebar" id="serupa"></ul>
+    </section>
+  </main>
+
+  <footer class="kaki">
+    <div class="wadah">
+      <div>
+        <p class="logo"><img src="logo.svg" alt="" width="44" height="32">TechnoParts</p>
+        <p>Toko komponen elektronik. Proyek UTS Pemrograman API.</p>
+      </div>
+      <div><h2>Belanja</h2><div class="daftar-tautan" data-kategori></div></div>
+      <div><h2>Informasi</h2><div class="daftar-tautan"><a href="admin.html">Kelola toko</a><a href="kredit.html">Kredit foto</a></div></div>
+    </div>
+  </footer>
+</body>
+</html>

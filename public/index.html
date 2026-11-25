@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechnoParts, toko komponen elektronik</title>
+  <meta name="description" content="Toko komponen elektronik: mikrokontroler, sensor, modul, dan komponen dasar.">
+  <link rel="icon" href="logo.svg">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="toko.mjs"></script>
+</head>
+<body>
+  <a class="lompat" href="#isi">Lewati ke daftar barang</a>
+
+  <header class="kepala">
+    <div class="wadah kepala-atas">
+      <a class="logo" href="/"><img src="logo.svg" alt="" width="44" height="32">TechnoParts</a>
+      <form class="cari" action="/" role="search">
+        <input id="cari" type="search" name="cari" aria-label="Cari barang" placeholder="Cari nama atau kode barang">
+        <button>Cari</button>
+      </form>
+      <div class="akun" data-akun></div>
+    </div>
+    <nav aria-label="Kategori"><div class="wadah nav" data-kategori></div></nav>
+  </header>
+
+  <section class="sambutan" id="sambutan">
+    <div class="wadah">
+      <div>
+        <h1>Komponen untuk proyek elektronikmu</h1>
+        <p>Mikrokontroler, sensor, modul, sampai resistor. Jumlah stok yang tampil selalu yang terbaru.</p>
+        <a class="tombol" href="/?kategori=">Lihat semua barang</a>
+      </div>
+      <img src="img/MCU-ESP32.webp" alt="Papan ESP32" width="640" height="640">
+    </div>
+  </section>
+
+  <main class="wadah" id="isi">
+    <nav class="remah" id="remah" aria-label="Posisi halaman"><a href="/">Beranda</a><span id="remah-akhir"></span></nav>
+
+    <div class="dua-kolom">
+      <aside>
+        <h2>Kategori</h2>
+        <nav class="samping" id="samping" aria-label="Kategori dan jumlah barang" data-kategori></nav>
+      </aside>
+
+      <div>
+        <h2 class="judul-daftar" id="judul">Semua barang</h2>
+        <p class="ket" id="keterangan"></p>
+
+        <form class="alat" id="saring" action="/">
+          <input type="hidden" name="kategori">
+          <input type="hidden" name="cari">
+          <span id="jumlah"></span>
+          <label class="centang"><input type="checkbox" name="tersedia" value="1"> Hanya yang tersedia</label>
+          <label>Urutkan
+            <select name="urut">
+              <option value="">Standar</option>
+              <option value="murah">Harga terendah</option>
+              <option value="mahal">Harga tertinggi</option>
+              <option value="nama">Nama A sampai Z</option>
+            </select>
+          </label>
+        </form>
+
+        <ul class="barang" id="barang"></ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="kaki">
+    <div class="wadah">
+      <div>
+        <p class="logo"><img src="logo.svg" alt="" width="44" height="32">TechnoParts</p>
+        <p>Toko komponen elektronik. Proyek UTS Pemrograman API.</p>
+      </div>
+      <div><h2>Belanja</h2><div class="daftar-tautan" data-kategori></div></div>
+      <div><h2>Informasi</h2><div class="daftar-tautan"><a href="admin.html">Kelola toko</a><a href="kredit.html">Kredit foto</a></div></div>
+    </div>
+  </footer>
+</body>
+</html>

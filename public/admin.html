@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kelola toko, TechnoParts</title>
+  <link rel="icon" href="logo.svg">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="admin.mjs"></script>
+</head>
+<body class="latar">
+  <header class="kepala">
+    <div class="wadah kepala-atas">
+      <a class="logo" href="/"><img src="logo.svg" alt="" width="44" height="32">TechnoParts</a>
+      <div class="akun" data-akun></div>
+    </div>
+  </header>
+
+  <main class="wadah" id="isi" hidden>
+    <div class="judul-aksi">
+      <div>
+        <h1>Kelola barang</h1>
+        <p class="ket" id="ringkasan"></p>
+      </div>
+      <button class="tombol" type="button" id="tambah">Tambah barang</button>
+    </div>
+
+    <div class="gulung kotak" tabindex="0" role="region" aria-label="Daftar barang">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Barang</th>
+            <th scope="col">Kategori</th>
+            <th scope="col" class="angka">Harga</th>
+            <th scope="col">Stok</th>
+            <th scope="col">Status</th>
+            <th scope="col"><span class="tersembunyi">Aksi</span></th>
+          </tr>
+        </thead>
+        <tbody id="daftar-produk"></tbody>
+      </table>
+    </div>
+
+    <section>
+      <h2>Kategori</h2>
+      <p class="ket">Kategori hanya bisa dihapus kalau tidak dipakai barang mana pun, termasuk barang yang sudah dihapus.</p>
+      <div class="kotak">
+        <ul class="daftar-kategori" id="daftar-kategori"></ul>
+        <form class="sebaris" id="form-kategori">
+          <label>Nama kategori
+            <input name="nama_kategori" required maxlength="50" autocomplete="off">
+          </label>
+          <label>Deskripsi (boleh kosong)
+            <input name="deskripsi" maxlength="200" autocomplete="off">
+          </label>
+          <button class="tombol">Tambah kategori</button>
+        </form>
+        <ul class="salah" id="salah-kategori" role="alert"></ul>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="jendela" aria-labelledby="judul-form">
+    <form id="form-produk">
+      <h2 id="judul-form">Tambah barang</h2>
+      <label>Nama barang
+        <input name="nama_produk" required maxlength="100" autocomplete="off">
+      </label>
+      <div class="berdua">
+        <label>Kategori
+          <select name="kategori_id" required></select>
+        </label>
+        <label>Kode barang
+          <input name="kode_produk" required maxlength="20" autocomplete="off">
+        </label>
+        <label>Harga (rupiah)
+          <input name="harga" type="number" required min="1" max="2147483647" step="1" inputmode="numeric">
+        </label>
+        <label>Stok
+          <input name="stok" type="number" required min="0" max="2147483647" step="1" inputmode="numeric">
+        </label>
+      </div>
+      <ul class="salah" id="salah-produk" role="alert"></ul>
+      <div class="aksi-form">
+        <button type="button" class="tombol polos" id="batal">Batal</button>
+        <button class="tombol" id="simpan">Tambah barang</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="kabar" id="kabar" role="status"></div>
+</body>
+</html>
